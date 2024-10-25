@@ -68,6 +68,9 @@ DOMAIN, images.ctfassets.net, REJECT
 DOMAIN, mapi.apptimize.com, REJECT
 DOMAIN, md-i-s.apptimize.com, REJECT
 
+# 中国联通
+DOMAIN-SUFFIX,m1.ad.10010.com,REJECT
+
 # ======= D ======= #
 # DNS 无响应
 DOMAIN, adttrackingprd.hwwt8.com, REJECT
@@ -125,9 +128,6 @@ DOMAIN, ws.tapjoyads.com, REJECT
 DOMAIN, www.googleadservices.com, REJECT
 
 # ======= H ======= #
-# 海尔智家
-DOMAIN-SUFFIX, ehaier.com, REJECT
-
 # 盒马
 AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, Hema4iPhone*)), REJECT
 
