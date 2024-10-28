@@ -2,7 +2,7 @@
 #!desc = 随时随地刷纯粹的信息流
 #!author = RuCu6[https://github.com/RuCu6], zmqcherish[https://github.com/zmqcherish]
 #!icon = https://github.com/Sea-xi/Loon/blob/main/Icons/app/weibo.png?raw=true
-#!date = 2024-08-28 08:25:20
+#!date = 2024-10-28 08:25:20
 
 [Rule]
 # 请求放行
