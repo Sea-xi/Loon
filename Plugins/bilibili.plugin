@@ -1,11 +1,8 @@
 #!name = 哔哩哔哩
 #!desc = 没有广告的哔哩哔哩更值得干杯
 #!author = Maasea[https://github.com/Maasea], RuCu6[https://github.com/RuCu6], kokoryh[https://github.com/kokoryh], 可莉🅥[https://gitlab.com/lodepuly/vpn_tool]
-#!icon = https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/bilibili.png
-#!date = 2024-10-15 22:45
-
-[General]
-force-http-engine-hosts = :8000
+#!icon = bilibili.png
+#!date = 2024-10-26 13:05
 
 [Rule]
 # 开屏广告
@@ -30,7 +27,6 @@ URL-REGEX, ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH, REJECT-DICT
 
 # 移除右上角活动入口
 ^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? mock-response-body data-type=json status-code=200 data="{ "code": -404, "message": "啥都木有", "ttl": 1, "data": null }"
-
 
 # 屏蔽默认搜索框关键词
 ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords reject-dict
@@ -79,7 +75,7 @@ http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.po
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:brand\/list|event\/list2|list|show) script-path = https://raw.githubusercontent.com/Sea-xi/Loon/refs/heads/main/Scripts/bilibili/json.js, requires-body = true, tag = 移除开屏广告
 
 # 移除首页推荐广告
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index(\/story)?\? script-path = https://raw.githubusercontent.com/Sea-xi/Loon/refs/heads/main/Scripts/bilibili/json.js, requires-body = true, tag = 移除首页推荐广告
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index script-path = https://raw.githubusercontent.com/Sea-xi/Loon/refs/heads/main/Scripts/bilibili/json.js, requires-body = true, tag = 移除首页推荐广告
 
 # 精简首页顶部标签
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path = https://raw.githubusercontent.com/Sea-xi/Loon/refs/heads/main/Scripts/bilibili/json.js, requires-body = true, tag = 精简首页顶部标签
@@ -94,7 +90,7 @@ http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab) 
 http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path = https://raw.githubusercontent.com/Sea-xi/Loon/refs/heads/main/Scripts/bilibili/json.js, requires-body = true, tag = 移除直播间广告
 
 # 精简我的页面
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine(\/ipad)?|myinfo) script-path = https://raw.githubusercontent.com/Sea-xi/Loon/refs/heads/main/Scripts/bilibili/json.js, requires-body = true, tag = 精简我的页面
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path = https://raw.githubusercontent.com/Sea-xi/Loon/refs/heads/main/Scripts/bilibili/json.js, requires-body = true, tag = 精简我的页面
 
 [MITM]
 hostname = ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, *live.bilibili.com
