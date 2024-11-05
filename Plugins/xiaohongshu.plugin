@@ -35,4 +35,4 @@ http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3
 http-response ^https:\/\/(?:edith|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/note\/videofeed|v10\/note\/video\/save) script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 移除视频水印
 
 [MitM]
-hostname = edith.xiaohongshu.com, www.xiaohongshu.com
+hostname = edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com
