@@ -241,10 +241,10 @@ URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
 ^https:\/\/qadx\.qinlinad\.com\/ad\/ reject-dict
 
 # > 浦发银行 //lban.spdb.com.cn, wap.spdb.com.cn
-^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/getAdvList\.ah$ reject
-^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/getAdvertisementList\.ah reject
-^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/prefetchAdvList\.ah reject
-^https?:\/\/wap\.spdb\.com\.cn\/mspmk-web-homeassist\/OpenScreenAdv\.ah$ reject
+^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/getAdvList\.ah$ reject-dict
+^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/getAdvertisementList\.ah reject-dict
+^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/prefetchAdvList\.ah reject-dict
+^https?:\/\/wap\.spdb\.com\.cn\/mspmk-web-homeassist\/OpenScreenAdv\.ah$ reject-dict
 
 # 爱思助手 //list-app-m.i4.cn
 ^https:\/\/list-app-m\.i4\.cn\/(?:adclickcb|getHotSearchList|getopfstadinfo)\.xhtml reject
@@ -280,9 +280,9 @@ URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
 
 # 航旅纵横
 # 首页悬浮标签
-^http:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native reject
+^http:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native reject-dict
 # 我的页面轮播图
-^http:\/\/umerp\.umetrip\.com\/gateway\/api\/umetrip\/native reject
+^http:\/\/umerp\.umetrip\.com\/gateway\/api\/umetrip\/native reject-dict
 
 # 盒马
 ^https:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/ reject-dict
