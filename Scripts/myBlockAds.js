@@ -5,14 +5,6 @@ const isResp = typeof $response !== "undefined";
 let body = $response.body;
 
 switch (isResp) {
-  // 草榴社区-评论区广告
-  case /^https:\/\/2023\.redircdn\.com\/web\/mob_post\.js\?/.test(url):
-    try {
-      body = body.replace(/spinit\(\)/g, "rucu6()");
-    } catch (err) {
-      console.log(`草榴社区-评论区广告, 出现异常: ` + err);
-    }
-    break;
   // 嘀嗒出行-开屏广告
   case /^https:\/\/capis(-?\w*)?\.didapinche\.com\/ad\/cx\/startup\?/.test(url):
     try {
@@ -161,19 +153,6 @@ switch (isResp) {
       body = JSON.stringify(obj);
     } catch (err) {
       console.log(`小爱音箱-开屏广告, 出现异常: ` + err);
-    }
-    break;
-  // 小米商城-开屏广告
-  case /^https:\/\/api\.m\.mi\.com\/v1\/app\/start/.test(url):
-    try {
-      let obj = JSON.parse(body);
-      delete obj.data.splash;
-      if (obj?.data?.skip_splash) {
-        obj.data.skip_splash = true;
-      }
-      body = JSON.stringify(obj);
-    } catch (err) {
-      console.log(`小米商城-开屏广告, 出现异常: ` + err);
     }
     break;
   // JavDB
